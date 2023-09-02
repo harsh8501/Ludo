@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 
 import userRoutes from './routes/userRoutes.js'
 import Connection from "./database/db.js";
+import otpRoutes from './routes/otpRoutes.js';
 
 const app = express();
 
@@ -23,3 +24,4 @@ Connection(url);
 app.listen(PORT, () => console.log(`Server is running successfully on PORT ${PORT}`));
 
 app.use('/api/user',userRoutes);
+app.use('api/otp/',otpRoutes);
