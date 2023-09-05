@@ -37,7 +37,6 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function SignUp() {
-
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {

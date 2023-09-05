@@ -39,23 +39,23 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function SignIn() {
-  const { phone,setPhone } = useContext(UserContext);
+  const { setPhone } = useContext(UserContext);
   const [showOtpBox, setShowOtpBox] = React.useState(false);
-  
+
   const navigate = useNavigate();
 
-  const handleSubmit = async(event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const result = {
-      phone: data.get("phone")
-    }
+      phone: data.get("phone"),
+    };
     console.log(result);
     await sendOTP(result);
     setShowOtpBox(true);
   };
 
-  const handleOTPSubmit = async(event) => {
+  const handleOTPSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const result = {

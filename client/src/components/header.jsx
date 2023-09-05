@@ -18,17 +18,18 @@ import AddCardIcon from "@mui/icons-material/AddCard";
 import Avatar from "@mui/material/Avatar";
 import { deepPurple } from "@mui/material/colors";
 import Grid from "@mui/material/Grid";
-import WineBarIcon from '@mui/icons-material/WineBar';
+import WineBarIcon from "@mui/icons-material/WineBar";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
-import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
-import ReceiptIcon from '@mui/icons-material/Receipt';
-import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
-import GroupAddIcon from '@mui/icons-material/GroupAdd';
-import DoNotDisturbOnIcon from '@mui/icons-material/DoNotDisturbOn';
-import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
-import LiveHelpIcon from '@mui/icons-material/LiveHelp';
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
+import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
+import ReceiptIcon from "@mui/icons-material/Receipt";
+import PersonAddAlt1Icon from "@mui/icons-material/PersonAddAlt1";
+import GroupAddIcon from "@mui/icons-material/GroupAdd";
+import DoNotDisturbOnIcon from "@mui/icons-material/DoNotDisturbOn";
+import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
+import LiveHelpIcon from "@mui/icons-material/LiveHelp";
+import { Link } from "@mui/material";
 
 const drawerWidth = 240;
 
@@ -122,11 +123,21 @@ export default function Header() {
             Ludo
           </Avatar>
           <Box style={{ marginLeft: "85%" }}>
-            <AddCardIcon style={{ color: "black", fontSize: "34px" }} />
-            <Typography
-              style={{ color: "black", fontWeight: "bold", fontSize: "10px" }}
+            <Link
+              href="/add-money"
+              style={{ textDecoration: "none", color: "inherit" }}
             >
-              ADD CASH
+              <AddCardIcon style={{ color: "black", fontSize: "34px" }} />
+              <Typography
+                style={{ color: "black", fontWeight: "bold", fontSize: "10px" }}
+              >
+                ADD CASH
+              </Typography>
+            </Link>
+            <Typography
+              style={{ color: "Green", fontWeight: "bold", fontSize: "15px" }}
+            >
+              Balance: {500}
             </Typography>
           </Box>
         </Toolbar>
@@ -159,181 +170,283 @@ export default function Header() {
               <ListItem
                 secondaryAction={
                   <IconButton edge="end">
-                    <ArrowForwardIosIcon sx={{ color: "black", fontSize: "10px" }}/>
+                    <ArrowForwardIosIcon
+                      sx={{ color: "black", fontSize: "10px" }}
+                    />
                   </IconButton>
                 }
               >
-                <AccountCircleIcon sx={{ color: "black", fontSize: "30px" }} />
-                <ListItemText sx={{ paddingLeft: "15px" }}>
-                  <Typography variant="h10" fontWeight="bold">
-                    My Profile
-                  </Typography>
-                  {secondary ? (
-                    <Typography variant="body2">Secondary text</Typography>
-                  ) : null}
-                </ListItemText>
+                <Link
+                  href="/profile"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <div style={{ display: "flex" }}>
+                    <AccountCircleIcon
+                      sx={{ color: "black", fontSize: "30px" }}
+                    />
+                    <ListItemText sx={{ paddingLeft: "15px" }}>
+                      <Typography variant="h10" fontWeight="bold">
+                        My Profile
+                      </Typography>
+                      {secondary ? (
+                        <Typography variant="body2">Secondary text</Typography>
+                      ) : null}
+                    </ListItemText>
+                  </div>
+                </Link>
               </ListItem>
               <Divider />
               <ListItem
                 secondaryAction={
                   <IconButton edge="end">
-                    <ArrowForwardIosIcon sx={{ color: "black", fontSize: "10px" }}/>
+                    <ArrowForwardIosIcon
+                      sx={{ color: "black", fontSize: "10px" }}
+                    />
                   </IconButton>
                 }
               >
-                <WineBarIcon sx={{ color: "black", fontSize: "30px" }} />
-                <ListItemText sx={{ paddingLeft: "15px" }}>
-                  <Typography variant="h10" fontWeight="bold">
-                    Win cash
-                  </Typography>
-                  {secondary ? (
-                    <Typography variant="body2">Secondary text</Typography>
-                  ) : null}
-                </ListItemText>
+                <Link
+                  href="/"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <div style={{ display: "flex" }}>
+                    <WineBarIcon sx={{ color: "black", fontSize: "30px" }} />
+                    <ListItemText sx={{ paddingLeft: "15px" }}>
+                      <Typography variant="h10" fontWeight="bold">
+                        Win cash
+                      </Typography>
+                      {secondary ? (
+                        <Typography variant="body2">Secondary text</Typography>
+                      ) : null}
+                    </ListItemText>
+                  </div>
+                </Link>
               </ListItem>
               <Divider />
               <ListItem
                 secondaryAction={
                   <IconButton edge="end">
-                    <ArrowForwardIosIcon sx={{ color: "black", fontSize: "10px" }}/>
+                    <ArrowForwardIosIcon
+                      sx={{ color: "black", fontSize: "10px" }}
+                    />
                   </IconButton>
                 }
               >
-                <AccountBalanceWalletIcon sx={{ color: "black", fontSize: "30px" }} />
-                <ListItemText sx={{ paddingLeft: "15px" }}>
-                  <Typography variant="h10" fontWeight="bold">
-                    My Wallet
-                  </Typography>
-                  {secondary ? (
-                    <Typography variant="body2">Secondary text</Typography>
-                  ) : null}
-                </ListItemText>
+                <Link
+                  href="/wallet"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <div style={{ display: "flex" }}>
+                    <AccountBalanceWalletIcon
+                      sx={{ color: "black", fontSize: "30px" }}
+                    />
+                    <ListItemText sx={{ paddingLeft: "15px" }}>
+                      <Typography variant="h10" fontWeight="bold">
+                        My Wallet
+                      </Typography>
+                      {secondary ? (
+                        <Typography variant="body2">Secondary text</Typography>
+                      ) : null}
+                    </ListItemText>
+                  </div>
+                </Link>
               </ListItem>
               <Divider />
               <ListItem
                 secondaryAction={
                   <IconButton edge="end">
-                    <ArrowForwardIosIcon sx={{ color: "black", fontSize: "10px" }}/>
+                    <ArrowForwardIosIcon
+                      sx={{ color: "black", fontSize: "10px" }}
+                    />
                   </IconButton>
                 }
               >
-                <EmojiEventsIcon sx={{ color: "black", fontSize: "30px" }} />
-                <ListItemText sx={{ paddingLeft: "15px" }}>
-                  <Typography variant="h10" fontWeight="bold">
-                    Games History
-                  </Typography>
-                  {secondary ? (
-                    <Typography variant="body2">Secondary text</Typography>
-                  ) : null}
-                </ListItemText>
+                <Link
+                  href="/profile"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <div style={{ display: "flex" }}>
+                    <EmojiEventsIcon
+                      sx={{ color: "black", fontSize: "30px" }}
+                    />
+                    <ListItemText sx={{ paddingLeft: "15px" }}>
+                      <Typography variant="h10" fontWeight="bold">
+                        Games History
+                      </Typography>
+                      {secondary ? (
+                        <Typography variant="body2">Secondary text</Typography>
+                      ) : null}
+                    </ListItemText>
+                  </div>
+                </Link>
               </ListItem>
               <Divider />
               <ListItem
                 secondaryAction={
                   <IconButton edge="end">
-                    <ArrowForwardIosIcon sx={{ color: "black", fontSize: "10px" }}/>
+                    <ArrowForwardIosIcon
+                      sx={{ color: "black", fontSize: "10px" }}
+                    />
                   </IconButton>
                 }
               >
-                <ReceiptIcon sx={{ color: "black", fontSize: "30px" }} />
-                <ListItemText sx={{ paddingLeft: "15px" }}>
-                  <Typography variant="h10" fontWeight="bold">
-                    Transaction History
-                  </Typography>
-                  {secondary ? (
-                    <Typography variant="body2">Secondary text</Typography>
-                  ) : null}
-                </ListItemText>
+                <Link
+                  href="/profile"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <div style={{ display: "flex" }}>
+                    <ReceiptIcon sx={{ color: "black", fontSize: "30px" }} />
+                    <ListItemText sx={{ paddingLeft: "15px" }}>
+                      <Typography variant="h10" fontWeight="bold">
+                        Transaction
+                      </Typography>
+                      {secondary ? (
+                        <Typography variant="body2">Secondary text</Typography>
+                      ) : null}
+                    </ListItemText>
+                  </div>
+                </Link>
               </ListItem>
               <Divider />
               <ListItem
                 secondaryAction={
                   <IconButton edge="end">
-                    <ArrowForwardIosIcon sx={{ color: "black", fontSize: "10px" }}/>
+                    <ArrowForwardIosIcon
+                      sx={{ color: "black", fontSize: "10px" }}
+                    />
                   </IconButton>
                 }
               >
-                <PersonAddAlt1Icon sx={{ color: "black", fontSize: "30px" }} />
-                <ListItemText sx={{ paddingLeft: "15px" }}>
-                  <Typography variant="h10" fontWeight="bold">
-                    Refer & Earn
-                  </Typography>
-                  {secondary ? (
-                    <Typography variant="body2">Secondary text</Typography>
-                  ) : null}
-                </ListItemText>
-              </ListItem>
-              <Divider />
-               <ListItem
-                secondaryAction={
-                  <IconButton edge="end">
-                    <ArrowForwardIosIcon sx={{ color: "black", fontSize: "10px" }}/>
-                  </IconButton>
-                }
-              >
-                <GroupAddIcon sx={{ color: "black", fontSize: "30px" }} />
-                <ListItemText sx={{ paddingLeft: "15px" }}>
-                  <Typography variant="h10" fontWeight="bold">
-                    Referral History
-                  </Typography>
-                  {secondary ? (
-                    <Typography variant="body2">Secondary text</Typography>
-                  ) : null}
-                </ListItemText>
+                <Link
+                  href="/profile"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <div style={{ display: "flex" }}>
+                    <PersonAddAlt1Icon
+                      sx={{ color: "black", fontSize: "30px" }}
+                    />
+                    <ListItemText sx={{ paddingLeft: "15px" }}>
+                      <Typography variant="h10" fontWeight="bold">
+                        Refer & Earn
+                      </Typography>
+                      {secondary ? (
+                        <Typography variant="body2">Secondary text</Typography>
+                      ) : null}
+                    </ListItemText>
+                  </div>
+                </Link>
               </ListItem>
               <Divider />
               <ListItem
                 secondaryAction={
                   <IconButton edge="end">
-                    <ArrowForwardIosIcon sx={{ color: "black", fontSize: "10px" }}/>
+                    <ArrowForwardIosIcon
+                      sx={{ color: "black", fontSize: "10px" }}
+                    />
                   </IconButton>
                 }
               >
-                <DoNotDisturbOnIcon sx={{ color: "black", fontSize: "30px" }} />
-                <ListItemText sx={{ paddingLeft: "15px" }}>
-                  <Typography variant="h10" fontWeight="bold">
-                    Penalty History
-                  </Typography>
-                  {secondary ? (
-                    <Typography variant="body2">Secondary text</Typography>
-                  ) : null}
-                </ListItemText>
+                <Link
+                  href="/profile"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <div style={{ display: "flex" }}>
+                    <GroupAddIcon sx={{ color: "black", fontSize: "30px" }} />
+                    <ListItemText sx={{ paddingLeft: "15px" }}>
+                      <Typography variant="h10" fontWeight="bold">
+                        Referral History
+                      </Typography>
+                      {secondary ? (
+                        <Typography variant="body2">Secondary text</Typography>
+                      ) : null}
+                    </ListItemText>
+                  </div>
+                </Link>
               </ListItem>
               <Divider />
               <ListItem
                 secondaryAction={
                   <IconButton edge="end">
-                    <ArrowForwardIosIcon sx={{ color: "black", fontSize: "10px" }}/>
+                    <ArrowForwardIosIcon
+                      sx={{ color: "black", fontSize: "10px" }}
+                    />
                   </IconButton>
                 }
               >
-                <NotificationsActiveIcon sx={{ color: "black", fontSize: "30px" }} />
-                <ListItemText sx={{ paddingLeft: "15px" }}>
-                  <Typography variant="h10" fontWeight="bold">
-                    Notification
-                  </Typography>
-                  {secondary ? (
-                    <Typography variant="body2">Secondary text</Typography>
-                  ) : null}
-                </ListItemText>
+                <Link
+                  href="/profile"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <div style={{ display: "flex" }}>
+                    <DoNotDisturbOnIcon
+                      sx={{ color: "black", fontSize: "30px" }}
+                    />
+                    <ListItemText sx={{ paddingLeft: "15px" }}>
+                      <Typography variant="h10" fontWeight="bold">
+                        Penalty History
+                      </Typography>
+                      {secondary ? (
+                        <Typography variant="body2">Secondary text</Typography>
+                      ) : null}
+                    </ListItemText>
+                  </div>
+                </Link>
               </ListItem>
               <Divider />
               <ListItem
                 secondaryAction={
                   <IconButton edge="end">
-                    <ArrowForwardIosIcon sx={{ color: "black", fontSize: "10px" }}/>
+                    <ArrowForwardIosIcon
+                      sx={{ color: "black", fontSize: "10px" }}
+                    />
                   </IconButton>
                 }
               >
-                <LiveHelpIcon sx={{ color: "black", fontSize: "30px" }} />
-                <ListItemText sx={{ paddingLeft: "15px" }}>
-                  <Typography variant="h10" fontWeight="bold">
-                    Support
-                  </Typography>
-                  {secondary ? (
-                    <Typography variant="body2">Secondary text</Typography>
-                  ) : null}
-                </ListItemText>
+                <Link
+                  href="/profile"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <div style={{ display: "flex" }}>
+                    <NotificationsActiveIcon
+                      sx={{ color: "black", fontSize: "30px" }}
+                    />
+                    <ListItemText sx={{ paddingLeft: "15px" }}>
+                      <Typography variant="h10" fontWeight="bold">
+                        Notification
+                      </Typography>
+                      {secondary ? (
+                        <Typography variant="body2">Secondary text</Typography>
+                      ) : null}
+                    </ListItemText>
+                  </div>
+                </Link>
+              </ListItem>
+              <Divider />
+              <ListItem
+                secondaryAction={
+                  <IconButton edge="end">
+                    <ArrowForwardIosIcon
+                      sx={{ color: "black", fontSize: "10px" }}
+                    />
+                  </IconButton>
+                }
+              >
+                <Link
+                  href="/profile"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <div style={{ display: "flex" }}>
+                    <LiveHelpIcon sx={{ color: "black", fontSize: "30px" }} />
+                    <ListItemText sx={{ paddingLeft: "15px" }}>
+                      <Typography variant="h10" fontWeight="bold">
+                        Support
+                      </Typography>
+                      {secondary ? (
+                        <Typography variant="body2">Secondary text</Typography>
+                      ) : null}
+                    </ListItemText>
+                  </div>
+                </Link>
               </ListItem>
               <Divider />
             </List>

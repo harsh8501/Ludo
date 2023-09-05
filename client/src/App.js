@@ -5,6 +5,9 @@ import SignIn from "./components/user/signin";
 import Home from "./components/home";
 import AadharVerification from "./components/KYC/aadhar-verification";
 import Profile from "./components/account/profile";
+import Wallet from "./components/account/wallet";
+import AddMoney from "./components/account/addMoney";
+import Challenges from "./components/challenges/challenges";
 
 function App() {
   return (
@@ -13,7 +16,13 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
-          <Route path="/aadhar-verification" element={<AadharVerification />}></Route>
+          <Route path="/wallet" element={<Wallet />}></Route>
+          <Route path="/add-money" element={<AddMoney />}></Route>
+          <Route path="/challenges" element={<Challenges />}></Route>
+          <Route
+            path="/aadhar-verification"
+            element={<AadharVerification />}
+          ></Route>
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path="/login" element={<SignIn />}></Route>
         </Routes>
