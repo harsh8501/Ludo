@@ -30,6 +30,7 @@ import DoNotDisturbOnIcon from "@mui/icons-material/DoNotDisturbOn";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import LiveHelpIcon from "@mui/icons-material/LiveHelp";
 import { Link } from "@mui/material";
+import SportsKabaddiIcon from '@mui/icons-material/SportsKabaddi';
 
 const drawerWidth = 240;
 
@@ -206,7 +207,7 @@ export default function Header() {
                 }
               >
                 <Link
-                  href="/"
+                  href="/home"
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
                   <div style={{ display: "flex" }}>
@@ -214,6 +215,33 @@ export default function Header() {
                     <ListItemText sx={{ paddingLeft: "15px" }}>
                       <Typography variant="h10" fontWeight="bold">
                         Win cash
+                      </Typography>
+                      {secondary ? (
+                        <Typography variant="body2">Secondary text</Typography>
+                      ) : null}
+                    </ListItemText>
+                  </div>
+                </Link>
+              </ListItem>
+              <Divider />
+              <ListItem
+                secondaryAction={
+                  <IconButton edge="end">
+                    <ArrowForwardIosIcon
+                      sx={{ color: "black", fontSize: "10px" }}
+                    />
+                  </IconButton>
+                }
+              >
+                <Link
+                  href="/challenges"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <div style={{ display: "flex" }}>
+                    <SportsKabaddiIcon sx={{ color: "black", fontSize: "30px" }} />
+                    <ListItemText sx={{ paddingLeft: "15px" }}>
+                      <Typography variant="h10" fontWeight="bold">
+                        Challenges
                       </Typography>
                       {secondary ? (
                         <Typography variant="body2">Secondary text</Typography>
@@ -318,7 +346,7 @@ export default function Header() {
                 }
               >
                 <Link
-                  href="/profile"
+                  href="/refer-earn"
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
                   <div style={{ display: "flex" }}>
@@ -432,7 +460,7 @@ export default function Header() {
                 }
               >
                 <Link
-                  href="/profile"
+                  href="/support"
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
                   <div style={{ display: "flex" }}>
